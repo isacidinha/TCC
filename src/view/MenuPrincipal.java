@@ -30,6 +30,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Cad_Medicamentos = new javax.swing.JMenuItem();
         Cad_Medico = new javax.swing.JMenuItem();
         Cad_Enfermeiro = new javax.swing.JMenuItem();
+        Cad_Comorbidade = new javax.swing.JMenuItem();
+        Cad_Patologia = new javax.swing.JMenuItem();
+        Cad_Alergia = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         menu_registrar = new javax.swing.JMenu();
         Medicar = new javax.swing.JMenuItem();
         Rest_Alergia = new javax.swing.JMenuItem();
@@ -56,7 +60,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 456, Short.MAX_VALUE)
+            .addGap(0, 457, Short.MAX_VALUE)
         );
 
         jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -78,7 +82,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Cad_Medicamentos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         Cad_Medicamentos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Cad_Medicamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons8-pílula-16.png"))); // NOI18N
-        Cad_Medicamentos.setText("Medicamentos");
+        Cad_Medicamentos.setText("Medicamento");
         Cad_Medicamentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Cad_MedicamentosActionPerformed(evt);
@@ -105,6 +109,46 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         menu_cadastrar.add(Cad_Enfermeiro);
+
+        Cad_Comorbidade.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Cad_Comorbidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons8-coração-com-pulso-16.png"))); // NOI18N
+        Cad_Comorbidade.setText("Comorbidade");
+        Cad_Comorbidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cad_ComorbidadeActionPerformed(evt);
+            }
+        });
+        menu_cadastrar.add(Cad_Comorbidade);
+
+        Cad_Patologia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Cad_Patologia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons8-vírus-16.png"))); // NOI18N
+        Cad_Patologia.setText("Patologia");
+        Cad_Patologia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cad_PatologiaActionPerformed(evt);
+            }
+        });
+        menu_cadastrar.add(Cad_Patologia);
+
+        Cad_Alergia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Cad_Alergia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons8-curativo-16.png"))); // NOI18N
+        Cad_Alergia.setText("Alergia");
+        Cad_Alergia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cad_AlergiaActionPerformed(evt);
+            }
+        });
+        menu_cadastrar.add(Cad_Alergia);
+
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons8-documentos-16.png"))); // NOI18N
+        jMenuItem1.setText("Receita");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menu_cadastrar.add(jMenuItem1);
 
         jMenuBar1.add(menu_cadastrar);
 
@@ -209,7 +253,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -218,12 +262,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Cad_MedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cad_MedicamentosActionPerformed
-        Tela_CadMedicamento x = new Tela_CadMedicamento();
-        jDesktopPane1.add(x);
-        x.setVisible(true);
-    }//GEN-LAST:event_Cad_MedicamentosActionPerformed
 
     private void SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairActionPerformed
          int resp = JOptionPane.showConfirmDialog(null, 
@@ -245,23 +283,29 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Gera_Relat_PacienteActionPerformed
 
-    private void Cad_PacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cad_PacienteActionPerformed
-        Tela_CadPaciente x = new Tela_CadPaciente();
-        jDesktopPane1.add(x);
-        x.setVisible(true);
-    }//GEN-LAST:event_Cad_PacienteActionPerformed
-
     private void MedicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicarActionPerformed
-        Tela_CadReceita x = new Tela_CadReceita();
+        Tela_Medicar x = new Tela_Medicar();
         jDesktopPane1.add(x);
         x.setVisible(true);
     }//GEN-LAST:event_MedicarActionPerformed
 
-    private void Cad_MedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cad_MedicoActionPerformed
-        Tela_CadMedico x = new Tela_CadMedico();
+    private void Rest_AlergiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rest_AlergiaActionPerformed
+        Tela_RestrAlergia x = new Tela_RestrAlergia();
         jDesktopPane1.add(x);
         x.setVisible(true);
-    }//GEN-LAST:event_Cad_MedicoActionPerformed
+    }//GEN-LAST:event_Rest_AlergiaActionPerformed
+
+    private void Rest_ComorbidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rest_ComorbidadeActionPerformed
+        Tela_RestrComorbidade x = new Tela_RestrComorbidade();
+        jDesktopPane1.add(x);
+        x.setVisible(true);
+    }//GEN-LAST:event_Rest_ComorbidadeActionPerformed
+
+    private void Rest_PatologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rest_PatologiaActionPerformed
+        Tela_RestrPatologia x = new Tela_RestrPatologia();
+        jDesktopPane1.add(x);
+        x.setVisible(true);
+    }//GEN-LAST:event_Rest_PatologiaActionPerformed
 
     private void Cad_EnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cad_EnfermeiroActionPerformed
         Tela_CadEnfermeiro x = new Tela_CadEnfermeiro();
@@ -269,23 +313,47 @@ public class MenuPrincipal extends javax.swing.JFrame {
         x.setVisible(true);
     }//GEN-LAST:event_Cad_EnfermeiroActionPerformed
 
-    private void Rest_AlergiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rest_AlergiaActionPerformed
-        Tela_CadAlergia x = new Tela_CadAlergia();
+    private void Cad_MedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cad_MedicoActionPerformed
+        Tela_CadMedico x = new Tela_CadMedico();
         jDesktopPane1.add(x);
         x.setVisible(true);
-    }//GEN-LAST:event_Rest_AlergiaActionPerformed
+    }//GEN-LAST:event_Cad_MedicoActionPerformed
 
-    private void Rest_ComorbidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rest_ComorbidadeActionPerformed
+    private void Cad_MedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cad_MedicamentosActionPerformed
+        Tela_CadMedicamento x = new Tela_CadMedicamento();
+        jDesktopPane1.add(x);
+        x.setVisible(true);
+    }//GEN-LAST:event_Cad_MedicamentosActionPerformed
+
+    private void Cad_PacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cad_PacienteActionPerformed
+        Tela_CadPaciente x = new Tela_CadPaciente();
+        jDesktopPane1.add(x);
+        x.setVisible(true);
+    }//GEN-LAST:event_Cad_PacienteActionPerformed
+
+    private void Cad_ComorbidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cad_ComorbidadeActionPerformed
         Tela_CadComorbidade x = new Tela_CadComorbidade();
         jDesktopPane1.add(x);
         x.setVisible(true);
-    }//GEN-LAST:event_Rest_ComorbidadeActionPerformed
+    }//GEN-LAST:event_Cad_ComorbidadeActionPerformed
 
-    private void Rest_PatologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rest_PatologiaActionPerformed
+    private void Cad_PatologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cad_PatologiaActionPerformed
         Tela_CadPatologia x = new Tela_CadPatologia();
         jDesktopPane1.add(x);
         x.setVisible(true);
-    }//GEN-LAST:event_Rest_PatologiaActionPerformed
+    }//GEN-LAST:event_Cad_PatologiaActionPerformed
+
+    private void Cad_AlergiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cad_AlergiaActionPerformed
+        Tela_CadAlergia x = new Tela_CadAlergia();
+        jDesktopPane1.add(x);
+        x.setVisible(true);
+    }//GEN-LAST:event_Cad_AlergiaActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Tela_CadReceita x = new Tela_CadReceita();
+        jDesktopPane1.add(x);
+        x.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,10 +392,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Cad_Alergia;
+    private javax.swing.JMenuItem Cad_Comorbidade;
     private javax.swing.JMenuItem Cad_Enfermeiro;
     private javax.swing.JMenuItem Cad_Medicamentos;
     private javax.swing.JMenuItem Cad_Medico;
     private javax.swing.JMenuItem Cad_Paciente;
+    private javax.swing.JMenuItem Cad_Patologia;
     private javax.swing.JMenuItem Gera_Relat_Med;
     private javax.swing.JMenuItem Gera_Relat_Paciente;
     private javax.swing.JMenuItem Medicar;
@@ -337,6 +408,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem Sair;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu menu_cadastrar;
     private javax.swing.JMenu menu_registrar;
     private javax.swing.JMenu menu_relatorio;

@@ -34,14 +34,8 @@ public class Tela_CadComorbidade extends javax.swing.JInternalFrame {
         txt_codigo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txt_nome = new javax.swing.JTextField();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        btn_adicionar = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        table_comorbidade = new javax.swing.JTable();
-        btn_limpar_tabela = new javax.swing.JButton();
-        combo_medicamento = new javax.swing.JComboBox<>();
+        txt_descricao2 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
         btn_novo = new javax.swing.JButton();
         txt_gravar = new javax.swing.JButton();
 
@@ -58,7 +52,7 @@ public class Tela_CadComorbidade extends javax.swing.JInternalFrame {
         jLabel9.setText("Cadastro de Comorbidades");
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel12.setText("Descrição:");
+        jLabel12.setText("Desc.:");
 
         txt_descricao.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -72,6 +66,11 @@ public class Tela_CadComorbidade extends javax.swing.JInternalFrame {
         jLabel2.setText("Nome:");
 
         txt_nome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        txt_descricao2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel14.setText("Obs.:");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -87,14 +86,18 @@ public class Tela_CadComorbidade extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_nome))
+                        .addComponent(txt_nome, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_descricao)))
+                        .addComponent(txt_descricao))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txt_descricao2)))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -110,83 +113,12 @@ public class Tela_CadComorbidade extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txt_descricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, java.awt.Color.lightGray));
-
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons8-menos-16.png"))); // NOI18N
-        jLabel17.setText("Restrição à medicamentos");
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel18.setText("Medicamento que se restringe:");
-
-        btn_adicionar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_adicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons8-soma-16.png"))); // NOI18N
-        btn_adicionar.setText("ADICIONAR");
-
-        table_comorbidade.setBackground(new java.awt.Color(255, 255, 204));
-        table_comorbidade.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        table_comorbidade.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
-            },
-            new String [] {
-                "Medicamento"
-            }
-        ));
-        jScrollPane4.setViewportView(table_comorbidade);
-
-        btn_limpar_tabela.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_limpar_tabela.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons8-apagar-16.png"))); // NOI18N
-        btn_limpar_tabela.setText("LIMPAR TABELA");
-
-        combo_medicamento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        combo_medicamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nenhum" }));
-        combo_medicamento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combo_medicamentoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(combo_medicamento, 0, 203, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_adicionar))
-                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
-                    .addComponent(btn_limpar_tabela))
-                .addContainerGap())
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel17)
+                    .addComponent(txt_descricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(btn_adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(combo_medicamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_limpar_tabela)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_descricao2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -205,7 +137,6 @@ public class Tela_CadComorbidade extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -218,9 +149,7 @@ public class Tela_CadComorbidade extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_gravar)
@@ -231,28 +160,18 @@ public class Tela_CadComorbidade extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void combo_medicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_medicamentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_combo_medicamentoActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_adicionar;
-    private javax.swing.JButton btn_limpar_tabela;
     private javax.swing.JButton btn_novo;
-    private javax.swing.JComboBox<String> combo_medicamento;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable table_comorbidade;
     private javax.swing.JTextField txt_codigo;
     private javax.swing.JTextField txt_descricao;
+    private javax.swing.JTextField txt_descricao2;
     private javax.swing.JButton txt_gravar;
     private javax.swing.JTextField txt_nome;
     // End of variables declaration//GEN-END:variables
